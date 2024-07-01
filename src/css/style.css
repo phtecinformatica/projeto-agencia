@@ -237,7 +237,7 @@ body {
 .footer {
   grid-area: footer;
   display: flex;
-  background-color: lightgreen;
+  background-color: #fff;
   flex-direction: column;
   text-align: center;
   padding: 100px 0;
@@ -263,13 +263,16 @@ body {
 .footer nav ul li a {
   font-weight: 500;
   font-size: 2rem;
-  margin: 20px;
+  /* margin: 20px; */
+  padding: 10px 30px;
+  border-radius: 50px;
   transition: 0.3s;
 }
 
 .footer nav ul li a:hover {
   font-weight: 700;
   color: #fff;
+  background-color: coral;
 }
 
 .footer .social i {
@@ -278,36 +281,75 @@ body {
 }
 
 .footer .social i:hover {
-  color: #fff;
+  color: coral;
 }
 
 .footer .social a {
   margin: 20px;
 }
 
-.float {
+/*BOTÃO WHATSAPP*/
+
+#div-fixa {
   position: fixed;
   bottom: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
+  left: 20px;
+  /* margin: 0 20px; */
+  background: rgb(89, 245, 122);
+  width: 230px;
   border-radius: 50px;
-  background-color: rgb(10, 206, 10);
+  cursor: pointer;
+  transition: 0.5s all;
+}
+
+#div-fixa.shrink {
+  width: 50px;
+  transition: 0.5s all;
+  overflow: hidden;
+}
+
+#div-fixa img {
+  width: 50px;
+  height: 50px;
+}
+
+#div-fixa a .flex-itens {
   display: flex;
-  justify-content: center;
   align-items: center;
-
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.my-float {
-  font-size: 46px;
-  color: #fff;
-  transition: 0.3s;
+#div-fixa a .flex-itens span {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  margin-left: 5px;
+  min-width: 170px;
+  opacity: 0;
 }
 
-.my-float:hover {
-  transform: scale(1.1);
+#div-fixa a .flex-itens span.aparecer {
+  transition: 0.5s all;
+  opacity: 1;
+}
+
+.flutuar {
+  animation: flutuar 0.7s infinite alternate ease-in-out;
+
+  /* animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out; */
+}
+
+@keyframes flutuar {
+  from {
+    transform: translate3d(0, 0, 0);
+    filter: brightness(100%);
+  }
+
+  to {
+    transform: translate3d(0, -15px, 0);
+    filter: brightness(150%);
+  }
 }
